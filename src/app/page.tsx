@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Services from "../components/Services";
 import TechStack from "../components/TechStack";
+import CTA from "../components/CTA";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
@@ -15,6 +16,7 @@ export default function Home() {
         <Projects />
         <Services />
         <TechStack />
+        <CTA />
         <Contact />
       </main>
       <Footer />
