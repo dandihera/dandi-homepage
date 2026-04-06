@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  icons: { icon: "/logo.png" },
   title: "단디소프트 | AI 기반 엔터프라이즈 솔루션 HERA",
   description:
     "단디소프트는 AI 기반 엔터프라이즈 플랫폼 HERA를 개발합니다. 데이터 관리, 업무 자동화, 커뮤니티 플랫폼을 하나로 통합하는 지능형 솔루션을 제공합니다.",

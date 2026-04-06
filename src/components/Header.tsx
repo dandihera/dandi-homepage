@@ -29,8 +29,9 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="text-xl font-bold gradient-text hover:opacity-80 transition-opacity">
-          단디소프트
+        <a href="#" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <img src="/logo.png" alt="단디소프트" className="h-8 w-auto" />
+          <span className="text-xl font-bold gradient-text">단디소프트</span>
         </a>
 
         {/* Desktop nav */}
