@@ -21,8 +21,8 @@ const techCategories = [
     dotColor: "bg-purple-400",
     borderColor: "hover:border-purple-500/30",
     items: [
-      { name: "Node.js / TypeScript" },
-      { name: "Python" },
+      { name: "Java 25 / Spring Boot" },
+      { name: "MSA Architecture" },
       { name: "REST / GraphQL API" },
       { name: "PostgreSQL / Redis" },
     ],

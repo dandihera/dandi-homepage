@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "단디소프트 | AI 에이전트 전문 소프트웨어 기업",
+  title: "단디소프트 | AI 기반 엔터프라이즈 솔루션 HERA",
   description:
-    "한국 시장에 특화된 AI 에이전트 기술과 업무 자동화 솔루션을 제공하는 단디소프트입니다.",
+    "단디소프트는 AI 기반 엔터프라이즈 플랫폼 HERA를 개발합니다. 데이터 관리, 업무 자동화, 커뮤니티 플랫폼을 하나로 통합하는 지능형 솔루션을 제공합니다.",
   keywords: [
+    "HERA",
+    "엔터프라이즈 솔루션",
     "AI 에이전트",
     "업무 자동화",
-    "Claude Code",
-    "한국 AI",
-    "소프트웨어 개발",
+    "단디소프트",
+    "MSA 플랫폼",
   ],
 };
 
