@@ -2,56 +2,60 @@
 
 import { motion } from "framer-motion";
 
-const projects = [
+const features = [
   {
-    name: "k-skill",
+    title: "AI 기반 데이터 관리",
     description:
-      "한국인을 위한 AI 에이전트 스킬 모음집. SRT/KTX 예매, 카카오톡, 쿠팡 검색, 배달 추적, 미세먼지, 한국 법령 검색 등 18개 이상의 실용적인 스킬을 제공합니다.",
-    tech: ["JavaScript", "Python", "Node.js"],
-    highlights: ["18+ 스킬", "한국 서비스 특화", "Claude Code 연동"],
-    url: "https://github.com/dandihera/k-skill",
+      "구조화된 데이터와 비정형 데이터를 AI가 자동으로 분류, 정제, 관리합니다. 게시판, 문서, 커뮤니티 데이터를 지능적으로 처리합니다.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+      </svg>
+    ),
     gradient: "from-blue-500/20 to-cyan-500/20",
     accentColor: "text-cyan-400",
-    borderColor: "border-cyan-500/20",
   },
   {
-    name: "harness",
+    title: "스마트 커뮤니티 플랫폼",
     description:
-      "도메인 특화 AI 에이전트 팀을 자동으로 설계하는 메타스킬 프레임워크. Pipeline, Fan-out/Fan-in, Expert Pool 등 6가지 아키텍처 패턴을 지원합니다.",
-    tech: ["Claude Code Plugin", "Markdown", "Agent Teams"],
-    highlights: ["6가지 아키텍처 패턴", "자동 스킬 생성", "+60% 품질 향상"],
-    url: "https://github.com/dandihera/harness",
+      "AI가 콘텐츠를 자동 분류하고 추천하는 차세대 게시판 시스템. 사용자 참여도를 높이고 관리 효율을 극대화합니다.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+      </svg>
+    ),
     gradient: "from-purple-500/20 to-pink-500/20",
     accentColor: "text-purple-400",
-    borderColor: "border-purple-500/20",
   },
   {
-    name: "AI-driven-work",
+    title: "업무 프로세스 자동화",
     description:
-      "Claude Code를 AI 에이전트로 활용하여 Jira/Confluence와 통합하는 업무 자동화 시스템. 일일 스탠드업, 주간 보고서, Slack 연동 등 조직 프로세스를 표준화합니다.",
-    tech: ["Claude Code", "MCP", "Jira", "Confluence"],
-    highlights: ["업무 자동화", "프로세스 표준화", "지식 공유 활성화"],
-    url: "https://github.com/dandihera/AI-driven-work",
+      "반복적인 업무 흐름을 AI가 학습하고 자동화합니다. 승인 프로세스, 보고서 생성, 데이터 입력 등을 지능적으로 처리합니다.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+      </svg>
+    ),
     gradient: "from-orange-500/20 to-yellow-500/20",
     accentColor: "text-orange-400",
-    borderColor: "border-orange-500/20",
   },
   {
-    name: "claude-code-tips",
+    title: "확장 가능한 아키텍처",
     description:
-      "Claude Code를 최대한 활용하기 위한 45가지 실전 팁 모음. 기초부터 고급 워크플로우까지 체계적으로 정리된 가이드입니다.",
-    tech: ["JavaScript", "Claude Code", "Markdown"],
-    highlights: ["45가지 팁", "커스텀 스크립트", "시스템 프롬프트 최적화"],
-    url: "https://github.com/dandihera/claude-code-tips",
+      "마이크로서비스 기반 설계로 기업 규모에 맞춰 유연하게 확장됩니다. v3에서 v4로의 진화를 통해 검증된 아키텍처입니다.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0L12 17.25 6.43 14.25m11.14 0l4.179 2.25L12 21.75l-9.75-5.25 4.179-2.25" />
+      </svg>
+    ),
     gradient: "from-green-500/20 to-emerald-500/20",
     accentColor: "text-green-400",
-    borderColor: "border-green-500/20",
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 sm:py-32 relative">
+    <section id="solution" className="py-24 sm:py-32 relative">
       {/* Background accent */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-purple-600/10 blur-[120px]" />
@@ -59,78 +63,62 @@ export default function Projects() {
 
       <div className="relative max-w-7xl mx-auto px-6">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            오픈소스 프로젝트
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm text-blue-300 mb-6">
+            Flagship Product
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4">
+            HERA
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            GitHub에 공개된 단디소프트의 핵심 프로젝트들입니다.
+          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+            AI 기반 엔터프라이즈 플랫폼.
+            <br className="hidden sm:block" />
+            비즈니스 데이터와 프로세스를 하나로 통합합니다.
           </p>
         </motion.div>
 
+        {/* Version badge */}
+        <motion.div
+          className="flex justify-center mb-16"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full glass">
+            <span className="text-xs text-slate-500">v3 Stable</span>
+            <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+            <span className="text-xs font-semibold text-blue-400">v4 Next Generation</span>
+          </div>
+        </motion.div>
+
         <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, i) => (
-            <motion.a
-              key={project.name}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group block glass rounded-2xl p-8 hover:bg-white/[0.08] transition-all duration-300 border ${project.borderColor}`}
+          {features.map((feature, i) => (
+            <motion.div
+              key={feature.title}
+              className="group glass rounded-2xl p-8 hover:bg-white/[0.08] transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className={`text-xl font-bold ${project.accentColor}`}>
-                  {project.name}
-                </h3>
-                <svg
-                  className="w-5 h-5 text-slate-500 group-hover:text-white transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                  />
-                </svg>
+              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center ${feature.accentColor} mb-5`}>
+                {feature.icon}
               </div>
-
-              <p className="text-slate-400 text-sm leading-relaxed mb-5">
-                {project.description}
+              <h3 className="text-xl font-semibold text-white mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                {feature.description}
               </p>
-
-              <div className="flex flex-wrap gap-2 mb-5">
-                {project.highlights.map((h) => (
-                  <span
-                    key={h}
-                    className={`text-xs px-2.5 py-1 rounded-full bg-gradient-to-r ${project.gradient} ${project.accentColor} font-medium`}
-                  >
-                    {h}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="text-xs px-2.5 py-1 rounded-full bg-white/5 text-slate-500"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>

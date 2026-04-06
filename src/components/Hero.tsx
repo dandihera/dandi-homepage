@@ -30,7 +30,7 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm text-slate-300 mb-8">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            AI 에이전트 전문 기업
+            AI 기반 엔터프라이즈 솔루션
           </div>
         </motion.div>
 
@@ -40,9 +40,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
         >
-          <span className="text-white">AI로 한국의 업무를</span>
+          <span className="text-white">AI로 비즈니스를</span>
           <br />
-          <span className="gradient-text">더 스마트하게</span>
+          <span className="gradient-text">혁신합니다</span>
         </motion.h1>
 
         <motion.p
@@ -51,9 +51,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          단디소프트는 한국 시장에 특화된 AI 에이전트 기술과 업무 자동화
-          솔루션을 개발합니다. SRT 예매부터 업무 프로세스 혁신까지,
-          AI가 일하는 방식을 바꿉니다.
+          단디소프트는 AI 기술을 활용한 엔터프라이즈 솔루션 HERA를 개발합니다.
+          데이터 관리부터 업무 자동화까지, 기업이 필요로 하는 지능형 플랫폼을
+          제공합니다.
         </motion.p>
 
         <motion.div
@@ -63,18 +63,16 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.45 }}
         >
           <a
-            href="#services"
+            href="#solution"
             className="px-8 py-3.5 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium hover:opacity-90 transition-opacity"
           >
-            서비스 알아보기
+            HERA 알아보기
           </a>
           <a
-            href="https://github.com/dandihera"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="px-8 py-3.5 rounded-full glass text-white font-medium hover:bg-white/10 transition-colors"
           >
-            GitHub 방문
+            도입 문의
           </a>
         </motion.div>
 
@@ -86,10 +84,10 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           {[
-            { value: "18+", label: "AI 스킬" },
-            { value: "6", label: "아키텍처 패턴" },
-            { value: "5+", label: "오픈소스 프로젝트" },
-            { value: "60%+", label: "품질 향상" },
+            { value: "HERA", label: "자체 솔루션" },
+            { value: "v4", label: "최신 버전" },
+            { value: "AI", label: "지능형 플랫폼" },
+            { value: "E2E", label: "엔드투엔드 서비스" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-2xl sm:text-3xl font-bold gradient-text">

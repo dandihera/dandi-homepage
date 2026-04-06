@@ -17,10 +17,10 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            함께 일해요
+            도입 문의
           </h2>
           <p className="text-slate-400 mb-10 leading-relaxed">
-            AI 에이전트 도입, 업무 자동화, 한국 서비스 통합 등<br />
+            HERA 솔루션 도입, AI 에이전트 개발, 데이터 컨설팅 등<br />
             어떤 프로젝트든 편하게 문의해 주세요.
           </p>
         </motion.div>

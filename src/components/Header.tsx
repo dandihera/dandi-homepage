@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 
 const navLinks = [
+  { label: "솔루션", href: "#solution" },
   { label: "서비스", href: "#services" },
-  { label: "프로젝트", href: "#projects" },
-  { label: "기술 스택", href: "#tech" },
+  { label: "기술 역량", href: "#tech" },
   { label: "문의", href: "#contact" },
 ];
 

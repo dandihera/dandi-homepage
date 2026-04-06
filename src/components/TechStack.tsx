@@ -4,48 +4,42 @@ import { motion } from "framer-motion";
 
 const techCategories = [
   {
-    title: "AI & 에이전트",
+    title: "AI & 머신러닝",
     items: [
-      { name: "Claude Code", level: "Expert" },
-      { name: "MCP (Model Context Protocol)", level: "Expert" },
-      { name: "Agent Orchestration", level: "Expert" },
-      { name: "Prompt Engineering", level: "Expert" },
+      { name: "LLM / AI Agent", level: "Core" },
+      { name: "Prompt Engineering", level: "Core" },
+      { name: "RAG / Vector DB", level: "Core" },
+      { name: "MCP Protocol", level: "Core" },
     ],
   },
   {
-    title: "프로그래밍 언어",
+    title: "백엔드",
     items: [
-      { name: "JavaScript / TypeScript", level: "Expert" },
-      { name: "Python", level: "Advanced" },
-      { name: "Shell Script", level: "Advanced" },
-      { name: "PowerShell", level: "Intermediate" },
+      { name: "Node.js / TypeScript", level: "Core" },
+      { name: "Python", level: "Core" },
+      { name: "REST / GraphQL API", level: "Core" },
+      { name: "PostgreSQL / Redis", level: "Core" },
     ],
   },
   {
-    title: "프레임워크 & 도구",
+    title: "프론트엔드",
     items: [
-      { name: "Node.js", level: "Expert" },
-      { name: "Next.js / React", level: "Advanced" },
-      { name: "Tailwind CSS", level: "Advanced" },
-      { name: "Framer Motion", level: "Intermediate" },
+      { name: "React / Next.js", level: "Core" },
+      { name: "TypeScript", level: "Core" },
+      { name: "Tailwind CSS", level: "Core" },
+      { name: "Responsive Design", level: "Core" },
     ],
   },
   {
-    title: "통합 & 자동화",
+    title: "인프라 & DevOps",
     items: [
-      { name: "Jira / Confluence", level: "Expert" },
-      { name: "Slack API", level: "Advanced" },
-      { name: "GitHub Actions", level: "Advanced" },
-      { name: "한국 서비스 API", level: "Expert" },
+      { name: "Docker / K8s", level: "Core" },
+      { name: "CI/CD Pipeline", level: "Core" },
+      { name: "GitHub Actions", level: "Core" },
+      { name: "Cloud (AWS/GCP)", level: "Core" },
     ],
   },
 ];
-
-const levelColors: Record<string, string> = {
-  Expert: "bg-blue-500/20 text-blue-300 border-blue-500/30",
-  Advanced: "bg-purple-500/20 text-purple-300 border-purple-500/30",
-  Intermediate: "bg-slate-500/20 text-slate-300 border-slate-500/30",
-};
 
 export default function TechStack() {
   return (
@@ -63,10 +57,10 @@ export default function TechStack() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            기술 스택
+            기술 역량
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
-            단디소프트가 활용하는 핵심 기술과 전문 역량입니다.
+            HERA 플랫폼을 구동하는 핵심 기술 스택입니다.
           </p>
         </motion.div>
 
@@ -85,13 +79,9 @@ export default function TechStack() {
               </h3>
               <div className="space-y-3">
                 {category.items.map((item) => (
-                  <div key={item.name} className="flex items-center justify-between gap-2">
+                  <div key={item.name} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400/60" />
                     <span className="text-sm text-white">{item.name}</span>
-                    <span
-                      className={`text-[10px] px-2 py-0.5 rounded-full border ${levelColors[item.level]}`}
-                    >
-                      {item.level}
-                    </span>
                   </div>
                 ))}
               </div>
