@@ -13,6 +13,7 @@ const services = [
     description:
       "기업 맞춤형 HERA 플랫폼을 구축합니다. 데이터 관리, 커뮤니티, 업무 자동화를 하나의 통합 플랫폼으로 제공하여 디지털 전환을 가속화합니다.",
     tags: ["HERA v4", "맞춤 구축", "통합 플랫폼"],
+    color: "blue",
   },
   {
     icon: (
@@ -24,6 +25,7 @@ const services = [
     description:
       "업무 특화 AI 에이전트를 설계하고 개발합니다. 멀티 에이전트 오케스트레이션, 자연어 인터페이스, 한국 서비스 연동 등 실전 경험 기반의 솔루션을 제공합니다.",
     tags: ["AI 에이전트", "자동화", "한국 서비스 연동"],
+    color: "purple",
   },
   {
     icon: (
@@ -35,6 +37,7 @@ const services = [
     description:
       "기업 데이터를 분석하고 AI 활용 전략을 수립합니다. 데이터 정제, 구조화, AI 모델 적용까지 데이터 기반 의사결정을 지원합니다.",
     tags: ["데이터 분석", "AI 전략", "의사결정 지원"],
+    color: "cyan",
   },
   {
     icon: (
@@ -46,8 +49,36 @@ const services = [
     description:
       "AI 코딩, 에이전트 설계, 프롬프트 엔지니어링 등 실전 기반의 기술 교육 프로그램을 제공합니다. 조직의 AI 활용 역량을 단계적으로 향상시킵니다.",
     tags: ["AI 교육", "워크숍", "역량 강화"],
+    color: "emerald",
   },
 ];
+
+const colorMap: Record<string, { icon: string; tag: string; tagBorder: string; tagText: string }> = {
+  blue: {
+    icon: "bg-blue-600/20 text-blue-400 group-hover:text-blue-300",
+    tag: "bg-blue-500/10",
+    tagBorder: "border-blue-500/20",
+    tagText: "text-blue-300",
+  },
+  purple: {
+    icon: "bg-purple-600/20 text-purple-400 group-hover:text-purple-300",
+    tag: "bg-purple-500/10",
+    tagBorder: "border-purple-500/20",
+    tagText: "text-purple-300",
+  },
+  cyan: {
+    icon: "bg-cyan-600/20 text-cyan-400 group-hover:text-cyan-300",
+    tag: "bg-cyan-500/10",
+    tagBorder: "border-cyan-500/20",
+    tagText: "text-cyan-300",
+  },
+  emerald: {
+    icon: "bg-emerald-600/20 text-emerald-400 group-hover:text-emerald-300",
+    tag: "bg-emerald-500/10",
+    tagBorder: "border-emerald-500/20",
+    tagText: "text-emerald-300",
+  },
+};
 
 export default function Services() {
   return (
@@ -60,6 +91,10 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm text-slate-300 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+            Services
+          </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             서비스
           </h2>
@@ -69,36 +104,53 @@ export default function Services() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {services.map((service, i) => (
-            <motion.div
-              key={service.title}
-              className="group glass rounded-2xl p-8 hover:bg-white/[0.08] transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex items-center justify-center text-blue-400 mb-5">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-3">
-                {service.title}
-              </h3>
-              <p className="text-slate-400 leading-relaxed mb-5">
-                {service.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {service.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20"
+          {services.map((service, i) => {
+            const colors = colorMap[service.color];
+            return (
+              <motion.div
+                key={service.title}
+                className="group glass rounded-2xl p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              >
+                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-colors duration-200 ${colors.icon}`}>
+                  {service.icon}
+                </div>
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-xl font-semibold text-white">
+                    {service.title}
+                  </h3>
+                  <motion.svg
+                    className="w-4 h-4 text-slate-600 group-hover:text-slate-400 transition-colors"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    initial={{ x: 0, opacity: 0 }}
+                    whileHover={{ x: 3 }}
+                    animate={{ opacity: 1 }}
                   >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </motion.svg>
+                </div>
+                <p className="text-slate-400 leading-relaxed mb-5">
+                  {service.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {service.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className={`text-xs px-3 py-1 rounded-full border ${colors.tag} ${colors.tagBorder} ${colors.tagText}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

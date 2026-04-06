@@ -13,7 +13,9 @@ const features = [
       </svg>
     ),
     gradient: "from-blue-500/20 to-cyan-500/20",
+    borderGlow: "hover:shadow-blue-500/10",
     accentColor: "text-cyan-400",
+    dotColor: "bg-cyan-400",
   },
   {
     title: "스마트 커뮤니티 플랫폼",
@@ -25,7 +27,9 @@ const features = [
       </svg>
     ),
     gradient: "from-purple-500/20 to-pink-500/20",
+    borderGlow: "hover:shadow-purple-500/10",
     accentColor: "text-purple-400",
+    dotColor: "bg-purple-400",
   },
   {
     title: "업무 프로세스 자동화",
@@ -37,7 +41,9 @@ const features = [
       </svg>
     ),
     gradient: "from-orange-500/20 to-yellow-500/20",
+    borderGlow: "hover:shadow-orange-500/10",
     accentColor: "text-orange-400",
+    dotColor: "bg-orange-400",
   },
   {
     title: "확장 가능한 아키텍처",
@@ -49,7 +55,9 @@ const features = [
       </svg>
     ),
     gradient: "from-green-500/20 to-emerald-500/20",
+    borderGlow: "hover:shadow-green-500/10",
     accentColor: "text-green-400",
+    dotColor: "bg-green-400",
   },
 ];
 
@@ -70,6 +78,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm text-blue-300 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
             Flagship Product
           </div>
           <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4">
@@ -90,12 +99,13 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full glass">
-            <span className="text-xs text-slate-500">v3 Stable</span>
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass">
+            <span className="text-xs text-slate-500 font-medium">v3 Stable</span>
             <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
             <span className="text-xs font-semibold text-blue-400">v4 Next Generation</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
           </div>
         </motion.div>
 
@@ -103,18 +113,26 @@ export default function Projects() {
           {features.map((feature, i) => (
             <motion.div
               key={feature.title}
-              className="group glass rounded-2xl p-8 hover:bg-white/[0.08] transition-all duration-300"
+              className={`group glass rounded-2xl p-8 transition-all duration-300 cursor-default hover:shadow-xl ${feature.borderGlow}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
             >
-              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center ${feature.accentColor} mb-5`}>
+              <motion.div
+                className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center ${feature.accentColor} mb-5`}
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ duration: 0.2 }}
+              >
                 {feature.icon}
+              </motion.div>
+              <div className="flex items-start justify-between mb-3">
+                <h3 className="text-xl font-semibold text-white">
+                  {feature.title}
+                </h3>
+                <span className={`w-2 h-2 rounded-full ${feature.dotColor} mt-2 opacity-60 group-hover:opacity-100 transition-opacity`} />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">
-                {feature.title}
-              </h3>
               <p className="text-slate-400 text-sm leading-relaxed">
                 {feature.description}
               </p>
